@@ -1,37 +1,62 @@
-.home-container {
-    text-align: center;
-}
-
+/* Header styles */
 .home-header {
-    background-color: #f8f8f8;
-    padding: 20px;
-}
-
-.home-header h1 {
-    margin: 0;
+    background-color: #f8f8f8; /* Light grey background */
+    padding: 20px 0; /* Padding on top and bottom */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Align nav items in a row */
+    justify-content: center; /* Center nav items */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    margin: 0 20px; /* Space out the nav items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark text for contrast */
+    font-weight: bold; /* Bold font for the links */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Color change on hover for interactivity */
+}
+
+/* Main content styles */
+.home-main {
+    text-align: center;
+    padding: 40px 20px; /* Add more padding */
 }
 
 .home-main img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular image */
     margin-top: 20px;
+    border: 5px solid #eee; /* Add a border around the image */
 }
 
+.home-main p {
+    color: #666; /* Dark grey text */
+    font-size: 18px; /* Slightly larger font size */
+    line-height: 1.6; /* Space out the lines a bit */
+}
+
+/* Footer styles */
 .home-footer {
     background-color: #f8f8f8;
     padding: 20px;
     position: absolute;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
 }
+
+.home-footer p {
+    color: #333;
+}
+

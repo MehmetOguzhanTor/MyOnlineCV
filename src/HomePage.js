@@ -21,7 +21,7 @@ function HomePage() {
                 {/* Add more content and elements as needed */}
             </main>
             <footer className="home-footer">
-                <p>Contact me at [Your Email]</p>
+                <p>Contact me at [mehmetoguzhantor@gmail.com]</p>
             </footer>
         </div>
     );
