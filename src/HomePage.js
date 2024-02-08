@@ -1,5 +1,5 @@
 import React from 'react';
-import './HomePage.css'; // This will import the styles you define in HomePage.css
+import './HomePage.css';
 
 function HomePage() {
     return (
@@ -15,13 +15,14 @@ function HomePage() {
                 </nav>
             </header>
             <main className="home-main">
-                <div className="chat-bubble">Hi there!</div>
-                <img src="C:\Users\oguzh\OneDrive\Masaüstü\MyOnlineCV\my-cv-website\public\photo.jpg" alt="Mehmet Oguzhan Tor" />
-                <p>Hello, I'm Mehmet Oguzhan Tor. Welcome to my website!</p>
-                {/* Add more content and elements as needed */}
+                <section className="introduction-section">
+                    <h2>Hi there!</h2>
+                    <img src={process.env.PUBLIC_URL + '/photo.jpg'} alt="Mehmet Oguzhan Tor" />
+                    <p>Hello, I'm Mehmet Oguzhan Tor. Welcome to my website!</p>
+                </section>
             </main>
             <footer className="home-footer">
-                <p>Contact me at [mehmetoguzhantor@gmail.com]</p>
+                <p>Contact me at <a href="mailto:mehmetoguzhantor@gmail.com">mehmetoguzhantor@gmail.com</a></p>
             </footer>
         </div>
     );
