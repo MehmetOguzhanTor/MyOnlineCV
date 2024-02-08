@@ -1,8 +1,14 @@
 /* Header styles */
 .home-header {
-    background-color: #f8f8f8; /* Light grey background */
-    padding: 20px 0; /* Padding on top and bottom */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
 nav ul {
@@ -29,7 +35,7 @@ nav ul li a:hover {
 /* Main content styles */
 .home-main {
     text-align: center;
-    padding: 40px 20px; /* Add more padding */
+    padding: 40px 20px;
 }
 
 .home-main img {
@@ -46,17 +52,55 @@ nav ul li a:hover {
     line-height: 1.6; /* Space out the lines a bit */
 }
 
+
 /* Footer styles */
 .home-footer {
     background-color: #f8f8f8;
     padding: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* subtle shadow for depth */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: 40px; /* Add some space before the footer */
 }
+
+/* Make links in the footer look better */
+.home-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.home-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Utility classes for margins and padding */
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.pt-20 { padding-top: 20px; }
+.pb-20 { padding-bottom: 20px; }
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+    .home-header h1,
+    .home-main h2,
+    .home-main p,
+    .home-footer p {
+        font-size: 90%; /* Slightly smaller font-size on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the navigation items on top of each other */
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Less space between navigation items */
+    }
+}
+
 
 .home-footer p {
     color: #333;
 }
 
+.introduction-section {
+    margin-top: 50px; /* Add space above the introduction section */
+}
