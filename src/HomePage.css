@@ -43,8 +43,8 @@ nav ul li a:hover {
     height: 250px; 
     border-radius: 50%; 
     margin-top: 20px;
-    border: 5px solid #eee; 
     object-fit: cover; 
+    border: 5px solid #eee; 
 }
 
 .home-main p {
