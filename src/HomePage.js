@@ -16,7 +16,7 @@ function HomePage() {
             </header>
             <main className="home-main">
                 <section className="introduction-section">
-                    <h2>Hi there!</h2>
+                    <h2>Hello There!</h2>
                     <img src={process.env.PUBLIC_URL + '/photo.jpg'} alt="Mehmet Oguzhan Tor" />
                     <p>Hello, I'm Mehmet Oguzhan Tor. Welcome to my website!</p>
                 </section>
