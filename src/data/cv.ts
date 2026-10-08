@@ -6,7 +6,7 @@ export const cv = {
   contact: [
     { label: 'Munich, Germany' },
     { label: 'mehmetoguzhantor@gmail.com', href: 'mailto:mehmetoguzhantor@gmail.com' },
-    { label: 'linkedin.com/in/mehmet-oğuzhan-tor', href: 'https://www.linkedin.com/in/mehmet-o%C4%9Fuzhan-tor' },
+    { label: 'linkedin.com/in/mehmet-oguzhan-tor', href: 'https://www.linkedin.com/in/mehmet-oguzhan-tor' },
     { label: 'mehmetoguzhantor.com', href: 'https://mehmetoguzhantor.com' },
   ],
   summary:
