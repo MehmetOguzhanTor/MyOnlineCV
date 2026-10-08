@@ -16,8 +16,8 @@ const cvPdf = '/Mehmet-Oguzhan-Tor-CV.pdf';
 
 const sections = [
   { id: 'about', label: t.nav.about },
-  { id: 'projects', label: t.nav.projects },
   { id: 'experience', label: t.nav.experience },
+  { id: 'projects', label: t.nav.projects },
   { id: 'now', label: t.nav.now },
   { id: 'contact', label: t.nav.contact },
 ];
@@ -83,6 +83,39 @@ const sections = [
         </div>
       </section>
 
+      <section id="experience" data-observe>
+        <h2 class="sec-head">{t.h.experience}</h2>
+        <ul class="exp">
+          {
+            t.experience.map((e) => (
+              <li>
+                <div class={`logos${e.logos.length > 1 ? ' pair' : ''}`}>
+                  {e.logos.length ? (
+                    e.logos.map((l) => <img src={l.src} alt={l.alt} title={l.alt} width="40" height="40" loading="lazy" />)
+                  ) : (
+                    <span class="mono" aria-hidden="true">{e.mono}</span>
+                  )}
+                </div>
+                <div class="exp-body">
+                  <span class="when">{e.when}</span>
+                  <h3>
+                    {e.title} <span class="org">· {e.org}</span>
+                  </h3>
+                  <p>{e.text}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="cv-box" id="cv">
+          <p>{t.cv.box}</p>
+          <div class="ctas">
+            <a class="btn primary" href="/cv/">{t.cv.view}</a>
+            <a class="btn ghost" href={cvPdf} download>{t.cv.download}</a>
+          </div>
+        </div>
+      </section>
+
       <section id="projects" data-observe>
         <h2 class="sec-head">{t.h.projects}</h2>
         <div class="projects">
@@ -121,39 +154,6 @@ const sections = [
               </article>
             ))
           }
-        </div>
-      </section>
-
-      <section id="experience" data-observe>
-        <h2 class="sec-head">{t.h.experience}</h2>
-        <ul class="exp">
-          {
-            t.experience.map((e) => (
-              <li>
-                <div class={`logos${e.logos.length > 1 ? ' pair' : ''}`}>
-                  {e.logos.length ? (
-                    e.logos.map((l) => <img src={l.src} alt={l.alt} title={l.alt} width="40" height="40" loading="lazy" />)
-                  ) : (
-                    <span class="mono" aria-hidden="true">{e.mono}</span>
-                  )}
-                </div>
-                <div class="exp-body">
-                  <span class="when">{e.when}</span>
-                  <h3>
-                    {e.title} <span class="org">· {e.org}</span>
-                  </h3>
-                  <p>{e.text}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-        <div class="cv-box" id="cv">
-          <p>{t.cv.box}</p>
-          <div class="ctas">
-            <a class="btn primary" href="/cv/">{t.cv.view}</a>
-            <a class="btn ghost" href={cvPdf} download>{t.cv.download}</a>
-          </div>
         </div>
       </section>
 
