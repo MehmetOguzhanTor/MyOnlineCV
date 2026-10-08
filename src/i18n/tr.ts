@@ -62,7 +62,7 @@ export default {
       when: 'Haz 2021 – Haz 2023',
       title: 'Sayısal Sinyal İşleme Mühendisi',
       org: 'Anayurt Teknoloji ve Savunma, Ankara',
-      logos: [], mono: 'A',
+      logos: [{ src: '/logos/anayurt.png', alt: 'Anayurt' }],
       text: 'HF/VHF/UHF haberleşme sistemleri tasarladım, FSK/PSK demodülatörleri geliştirdim, radar sinyallerini sınıflandırdım ve İHA uçuş kontrolü üzerinde çalıştım.',
     },
     {
@@ -76,7 +76,7 @@ export default {
       when: '2022',
       title: 'Lisans, Elektrik ve Elektronik Mühendisliği',
       org: 'Bilkent Üniversitesi, Ankara',
-      logos: [], mono: 'B',
+      logos: [{ src: '/logos/bilkent.svg', alt: 'Bilkent University' }],
       text: 'Eğitim tamamen İngilizce.',
     },
   ],

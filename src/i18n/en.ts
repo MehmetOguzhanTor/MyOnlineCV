@@ -62,7 +62,7 @@ export default {
       when: 'Jun 2021 – Jun 2023',
       title: 'Digital Signal Processing Engineer',
       org: 'Anayurt Technology and Defense, Ankara',
-      logos: [], mono: 'A',
+      logos: [{ src: '/logos/anayurt.png', alt: 'Anayurt' }],
       text: 'Designed HF/VHF/UHF communication systems, built FSK/PSK demodulators, classified radar signals, and worked on UAV flight control.',
     },
     {
@@ -76,7 +76,7 @@ export default {
       when: '2022',
       title: 'B.Sc. Electrical and Electronics Engineering',
       org: 'Bilkent University, Ankara',
-      logos: [], mono: 'B',
+      logos: [{ src: '/logos/bilkent.svg', alt: 'Bilkent University' }],
       text: 'Taught entirely in English.',
     },
   ],
