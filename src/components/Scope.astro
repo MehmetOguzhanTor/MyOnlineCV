@@ -1,7 +1,10 @@
 ---
-// Fixed background: a faint oscilloscope graticule. Around the pointer the
-// grid lights up in the accent colour with a soft glow, like a probe on a
-// scope screen. Purely decorative and ignored by assistive tech.
+// Fixed background: a faint oscilloscope graticule. Around a moving "probe"
+// point the grid lights up in the accent colour with a soft glow.
+//  - Mouse: the probe follows the pointer.
+//  - Touch screens: the probe follows the finger while touching, and otherwise
+//    traces a sine path across the screen as the page scrolls.
+// Purely decorative and ignored by assistive tech.
 ---
 
 <div class="scope" aria-hidden="true">
@@ -12,44 +15,87 @@
 
 <script>
   const root = document.documentElement;
+  // Variables are set on the scope layer only, so moving the glow never restyles the page content.
+  const scope = document.querySelector('.scope') as HTMLElement;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (finePointer) {
-    let tx = window.innerWidth * 0.3;
-    let ty = window.innerHeight * 0.3;
-    let x = tx;
-    let y = ty;
-    let raf = 0;
+  let tx = window.innerWidth * 0.3;
+  let ty = window.innerHeight * 0.3;
+  let x = tx;
+  let y = ty;
+  let raf = 0;
 
-    const apply = () => {
-      root.style.setProperty('--mx', `${x}px`);
-      root.style.setProperty('--my', `${y}px`);
-    };
-    const tick = () => {
-      // Ease towards the pointer so the glow trails slightly behind it.
-      x += (tx - x) * 0.18;
-      y += (ty - y) * 0.18;
+  const apply = () => {
+    scope.style.setProperty('--mx', `${x}px`);
+    scope.style.setProperty('--my', `${y}px`);
+  };
+  const tick = () => {
+    // Ease towards the target so the glow trails slightly behind it.
+    x += (tx - x) * 0.18;
+    y += (ty - y) * 0.18;
+    apply();
+    raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.5 ? requestAnimationFrame(tick) : 0;
+  };
+  const moveTo = (nx: number, ny: number) => {
+    tx = nx;
+    ty = ny;
+    if (reduce) {
+      x = tx;
+      y = ty;
       apply();
-      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.5 ? requestAnimationFrame(tick) : 0;
+    } else if (!raf) {
+      raf = requestAnimationFrame(tick);
+    }
+  };
+
+  if (finePointer) {
+    window.addEventListener('pointermove', (e) => moveTo(e.clientX, e.clientY), { passive: true });
+  } else {
+    let touching = false;
+    let release = 0;
+
+    // Scroll progress 0..1 mapped onto one and a half sine periods across the screen.
+    const scrollTarget = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      moveTo(w * (0.5 + 0.38 * Math.sin(p * Math.PI * 3)), h * (0.22 + 0.5 * p));
     };
 
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (!t) return;
+      touching = true;
+      clearTimeout(release);
+      moveTo(t.clientX, t.clientY);
+    };
+    window.addEventListener('touchstart', onTouch, { passive: true });
+    window.addEventListener('touchmove', onTouch, { passive: true });
     window.addEventListener(
-      'pointermove',
-      (e) => {
-        tx = e.clientX;
-        ty = e.clientY;
-        if (reduce) {
-          x = tx;
-          y = ty;
-          apply();
-        } else if (!raf) {
-          raf = requestAnimationFrame(tick);
-        }
+      'touchend',
+      () => {
+        release = window.setTimeout(() => {
+          touching = false;
+          scrollTarget();
+        }, 700);
       },
       { passive: true },
     );
-    root.classList.add('scope-live');
-    apply();
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!touching) scrollTarget();
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', scrollTarget, { passive: true });
+    scrollTarget();
+    x = tx;
+    y = ty;
   }
+
+  root.classList.add('scope-live');
+  apply();
 </script>
