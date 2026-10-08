@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Scope from './Scope.astro';
+import Socials from './Socials.astro';
 import { dict, languages, type Lang, type Project } from '../i18n';
 
 interface Props {
@@ -11,8 +12,6 @@ const { lang } = Astro.props;
 const t = dict[lang];
 const projects = t.projects as Project[];
 const email = 'mehmetoguzhantor@gmail.com';
-const linkedin = 'https://www.linkedin.com/in/mehmet-oguzhan-tor';
-const github = 'https://github.com/MehmetOguzhanTor';
 const cvPdf = '/Mehmet-Oguzhan-Tor-CV.pdf';
 
 const sections = [
@@ -52,6 +51,7 @@ const sections = [
       </nav>
 
       <div class="controls">
+        <Socials class="side-socials" />
         <a class="cv-link" href="/cv/">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>
           {t.cv.view}
@@ -184,10 +184,7 @@ const sections = [
             {t.ui.copy}
           </button>
         </div>
-        <ul class="socials">
-          <li><a href={linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href={github} target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
+        <Socials class="contact-socials" />
       </section>
 
       <footer class="foot">© {new Date().getFullYear()} Mehmet Oğuzhan Tor</footer>

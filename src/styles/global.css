@@ -210,9 +210,13 @@ main { display: grid; gap: 88px; padding-block: 64px 40px; min-width: 0; }
 .mail-addr:hover { color: var(--accent); }
 .copy { font: 600 14px/1 var(--font-b); color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; cursor: pointer; }
 .copy:hover { border-color: var(--fg); }
-.socials { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-.socials a { font-weight: 600; color: var(--muted); text-decoration: none; }
-.socials a:hover { color: var(--accent); }
+.social-icons { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.social-icons a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; color: var(--muted); transition: color 0.2s ease, background-color 0.2s ease, transform 0.15s ease; }
+.social-icons a:hover { color: var(--accent); background: var(--soft); transform: translateY(-2px); }
+.social-icons svg { width: 22px; height: 22px; }
+.side-socials { margin-left: -10px; }
+.contact-socials { margin-left: -10px; }
+@media (max-width: 899px) { .side-socials { margin-left: 0; } }
 
 .foot { font: 400 13px/1 var(--font-u); color: var(--muted); padding-top: 24px; border-top: 1px solid var(--line); }
 
