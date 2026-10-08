@@ -4,10 +4,14 @@ import { dict, languages, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
+  title?: string;
+  description?: string;
 }
 
 const { lang } = Astro.props;
 const t = dict[lang];
+const title = Astro.props.title ?? t.meta.title;
+const description = Astro.props.description ?? t.meta.description;
 const site = Astro.site ?? new URL('https://mehmetoguzhantor.com');
 const canonical = new URL(Astro.url.pathname, site);
 const ogImage = new URL('/photo.jpg', site);
@@ -18,8 +22,8 @@ const ogImage = new URL('/photo.jpg', site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {languages.map((l) => <link rel="alternate" hreflang={l.code} href={new URL(l.href, site)} />)}
     <link rel="alternate" hreflang="x-default" href={new URL('/', site)} />
@@ -28,8 +32,8 @@ const ogImage = new URL('/photo.jpg', site);
     <meta name="theme-color" content="#0e1418" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />

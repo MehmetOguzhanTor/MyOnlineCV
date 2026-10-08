@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/cv.css';
+import { cv } from '../data/cv';
+
+const pdf = '/Mehmet-Oguzhan-Tor-CV.pdf';
+---
+
+<Base lang="en" title="CV · Mehmet Oğuzhan Tor" description="Curriculum vitae of Mehmet Oğuzhan Tor, Requirements & Systems Engineer in Munich.">
+  <div class="cv-bar">
+    <a href="/" class="cv-back">← mehmetoguzhantor.com</a>
+    <div class="cv-actions">
+      <a class="btn primary" href={pdf} download>Download PDF</a>
+      <button type="button" class="theme-btn" id="themeBtn" data-dark="Dark mode" data-light="Light mode">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <span class="theme-label">Dark mode</span>
+      </button>
+    </div>
+  </div>
+
+  <article class="paper">
+    <header class="cv-head">
+      <div>
+        <h1>{cv.name}</h1>
+        <p class="cv-title">{cv.title}</p>
+      </div>
+      <ul class="cv-contact">
+        {cv.contact.map((c) => <li>{c.href ? <a href={c.href}>{c.label}</a> : c.label}</li>)}
+      </ul>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>{cv.summary}</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      {
+        cv.experience.map((e) => (
+          <div class="cv-item">
+            <div class="cv-row">
+              <h3>{e.org}</h3>
+              <span class="cv-meta">{e.place}</span>
+            </div>
+            {e.roles.map((r) => (
+              <div class="cv-role">
+                <div class="cv-row">
+                  <h4>{r.title}</h4>
+                  <span class="cv-meta">{r.when}</span>
+                </div>
+                <ul>
+                  {r.points.map((pt) => (
+                    <li>{pt}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      {
+        cv.education.map((e) => (
+          <div class="cv-item">
+            <div class="cv-row">
+              <h3>{e.org}</h3>
+              <span class="cv-meta">{e.place}</span>
+            </div>
+            <div class="cv-row">
+              <h4>{e.title}</h4>
+              <span class="cv-meta">{e.when}</span>
+            </div>
+            <p class="cv-note">{e.note}</p>
+          </div>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul class="cv-list">
+        {
+          cv.projects.map((p) => (
+            <li>
+              <strong>{p.title}</strong> <span class="cv-meta">({p.when})</span>: {p.text}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="cv-skills">
+        {
+          cv.skills.map((s) => (
+            <>
+              <dt>{s.h}</dt>
+              <dd>{s.p}</dd>
+            </>
+          ))
+        }
+        <dt>Languages</dt>
+        <dd>{cv.languages}</dd>
+        <dt>Certification</dt>
+        <dd>{cv.certifications}</dd>
+        <dt>Activities</dt>
+        <dd>{cv.activities}</dd>
+      </dl>
+    </section>
+  </article>
+
+  <script>
+    import { initTheme } from '../scripts/theme';
+    initTheme();
+  </script>
+</Base>

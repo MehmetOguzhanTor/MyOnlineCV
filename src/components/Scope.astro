@@ -1,0 +1,55 @@
+---
+// Fixed background: a faint oscilloscope graticule. Around the pointer the
+// grid lights up in the accent colour with a soft glow, like a probe on a
+// scope screen. Purely decorative and ignored by assistive tech.
+---
+
+<div class="scope" aria-hidden="true">
+  <div class="scope-grid"></div>
+  <div class="scope-lit"></div>
+  <div class="scope-glow"></div>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (finePointer) {
+    let tx = window.innerWidth * 0.3;
+    let ty = window.innerHeight * 0.3;
+    let x = tx;
+    let y = ty;
+    let raf = 0;
+
+    const apply = () => {
+      root.style.setProperty('--mx', `${x}px`);
+      root.style.setProperty('--my', `${y}px`);
+    };
+    const tick = () => {
+      // Ease towards the pointer so the glow trails slightly behind it.
+      x += (tx - x) * 0.18;
+      y += (ty - y) * 0.18;
+      apply();
+      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.5 ? requestAnimationFrame(tick) : 0;
+    };
+
+    window.addEventListener(
+      'pointermove',
+      (e) => {
+        tx = e.clientX;
+        ty = e.clientY;
+        if (reduce) {
+          x = tx;
+          y = ty;
+          apply();
+        } else if (!raf) {
+          raf = requestAnimationFrame(tick);
+        }
+      },
+      { passive: true },
+    );
+    root.classList.add('scope-live');
+    apply();
+  }
+</script>
