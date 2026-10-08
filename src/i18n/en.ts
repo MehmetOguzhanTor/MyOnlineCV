@@ -1,0 +1,96 @@
+export default {
+  meta: {
+    title: 'Mehmet Oğuzhan Tor · Requirements & Systems Engineer',
+    description:
+      'Electrical engineer in Munich working on requirements and systems engineering for secure radio systems, with a background in RF testing, DSP and unmanned aircraft.',
+  },
+  nav: { about: 'About', projects: 'Projects', experience: 'Experience', cv: 'CV', now: 'Now', contact: 'Contact' },
+  role: 'Requirements & Systems Engineer · RF and signal processing',
+  lede:
+    "I'm an electrical engineer based in Munich. I write the requirements behind secure radio systems at Rohde & Schwarz, with a background in RF testing, digital signal processing and unmanned aircraft.",
+  cta: { experience: 'See my experience', contact: 'Get in touch' },
+  h: { projects: 'projects', experience: 'experience', now: 'now', contact: 'contact' },
+  projects: [
+    {
+      when: '2019',
+      title: 'Autonomous UAV',
+      text: 'Designed and built a UAV for the TÜBİTAK UAV Turkey contest that completed its mission tasks on its own. Led the project as IEEE Bilkent Vice Chair.',
+      tags: ['Flight control', 'Modelling', 'Team lead'],
+    },
+    {
+      when: 'FPGA',
+      title: 'Spoken number recognition',
+      text: 'Recognises spoken digits in real time, with the signal processing written in VHDL on a BASYS3 board.',
+      tags: ['VHDL', 'DSP', 'BASYS3'],
+    },
+    {
+      when: 'FPGA',
+      title: 'Mini theremin',
+      text: 'An instrument you play without touching it: an ultrasonic sensor sets the pitch, an FPGA makes the sound.',
+      tags: ['VHDL', 'HC-SR04', 'Audio'],
+    },
+    {
+      when: 'Pi',
+      title: 'Smart house',
+      text: 'Home automation on a Raspberry Pi, controlled from a custom Android app.',
+      tags: ['Python', 'Raspberry Pi', 'Android'],
+    },
+  ],
+  experience: [
+    {
+      when: 'Jul 2025 – now',
+      title: 'Requirements Engineer',
+      org: 'Rohde & Schwarz (via K-tronik), Munich',
+      text: 'Breaking system requirements for a secure software-defined radio down into clear, testable requirements, and tracing each one to how it will be verified.',
+    },
+    {
+      when: 'Oct 2024 – Jun 2025',
+      title: 'Software Integration & Test Engineer',
+      org: 'Rohde & Schwarz (via K-tronik), Munich',
+      text: 'Brought up and validated RF subsystems for 2G to 5G cellular standards. Debugged HW/SW issues and automated regression tests in Python.',
+    },
+    {
+      when: 'Jul 2023 – Sep 2024',
+      title: 'Relocation to Germany',
+      org: 'Ankara → Munich',
+      text: 'Moved to Germany, studied German and kept building programming and data-analysis projects.',
+    },
+    {
+      when: 'Jun 2021 – Jun 2023',
+      title: 'Digital Signal Processing Engineer',
+      org: 'Anayurt Technology and Defense, Ankara',
+      text: 'Designed HF/VHF/UHF communication systems, built FSK/PSK demodulators, classified radar signals, and worked on UAV flight control.',
+    },
+    {
+      when: '2019 – 2020',
+      title: 'Internships',
+      org: 'ATEL Defense · Türk Telekom',
+      text: 'Hardware optimisation in R&D, and operating MPLS and DSLAM transmission systems.',
+    },
+    {
+      when: '2022',
+      title: 'B.Sc. Electrical and Electronics Engineering',
+      org: 'Bilkent University, Ankara',
+      text: 'Taught entirely in English.',
+    },
+  ],
+  cvBox: 'The full CV covers every role, skill and certificate. Ask me for a copy, or find the summary on LinkedIn.',
+  cvCta: 'View on LinkedIn',
+  nowStamp: 'Updated October 2026',
+  now: [
+    { h: 'Working on', p: 'Requirements for a secure software-defined radio at Rohde & Schwarz.' },
+    { h: 'Learning', p: 'German, on the way from A2 to B1.' },
+    { h: 'Building', p: 'This website, in English, Turkish and soon German.' },
+  ],
+  contactH: "Let's talk",
+  contactText: 'The fastest way to reach me is email.',
+  ui: {
+    dark: 'Dark mode',
+    light: 'Light mode',
+    copy: 'Copy',
+    copied: 'Copied',
+    deSoon: 'German coming soon',
+    language: 'Language',
+    menu: 'Sections',
+  },
+};
