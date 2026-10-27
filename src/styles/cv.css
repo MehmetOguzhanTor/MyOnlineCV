@@ -20,6 +20,7 @@
 .cv-contact a { text-decoration: none; }
 .cv-contact a:hover { color: var(--accent); }
 
+.cv-status { margin: 12px 0 0 !important; font: 600 13px/1.5 var(--font-b); color: var(--fg); }
 .paper section { margin-top: 24px; }
 .paper h2 { font: 500 12px/1 var(--font-u); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .paper p { margin: 0; }
@@ -56,6 +57,7 @@
   .cv-contact { font-size: 8.5pt; line-height: 1.55; white-space: nowrap; }
   .cv-head > div { flex: 1; min-width: 0; }
   .cv-title { font-size: 9.5pt; }
+  .cv-status { font-size: 9pt; margin-top: 8px !important; }
   .cv-item li { margin-bottom: 1px; }
   .cv-skills { grid-template-columns: 150px minmax(0, 1fr); gap: 3px 14px; }
   .cv-skills dt, .cv-skills dd { break-inside: avoid; }

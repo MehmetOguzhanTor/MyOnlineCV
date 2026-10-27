@@ -2,12 +2,12 @@ export default {
   meta: {
     title: 'Mehmet Oğuzhan Tor · Requirements & Systems Engineer',
     description:
-      'Electrical engineer in Munich working on requirements and systems engineering for secure radio systems, with a background in RF testing, DSP and unmanned aircraft.',
+      'Requirements & systems engineer in Munich with about four years in defence and telecommunications: system requirements, RF test and digital signal processing. Available immediately.',
   },
   nav: { about: 'About', projects: 'Projects', experience: 'Experience', cv: 'CV', now: 'Now', contact: 'Contact' },
-  role: 'Requirements & Systems Engineer · RF and signal processing',
+  role: 'Requirements & Systems Engineer · RF Test · DSP',
   lede:
-    "I'm an electrical engineer based in Munich. I write the requirements behind secure radio systems at Rohde & Schwarz, with a background in RF testing, digital signal processing and unmanned aircraft.",
+    "I'm an electrical engineer in Munich with about four years in defence and telecommunications, from physical-layer signal processing to formal system requirements. Most recently I led requirements engineering for a secure software-defined radio at Rohde & Schwarz.",
   cta: { experience: 'See my experience', contact: 'Get in touch' },
   h: { projects: 'projects', experience: 'experience', now: 'now', contact: 'contact' },
   projects: [
@@ -38,11 +38,11 @@ export default {
   ],
   experience: [
     {
-      when: 'Jul 2025 – now',
+      when: 'Jul 2025 – Oct 2026',
       title: 'Requirements Engineer',
       org: 'Rohde & Schwarz (via K-tronik), Munich',
       logos: [{ src: '/logos/rohde-schwarz.svg', alt: 'Rohde & Schwarz' }, { src: '/logos/k-tronik.png', alt: 'K-tronik' }],
-      text: 'Breaking system requirements for a secure software-defined radio down into clear, testable requirements, and tracing each one to how it will be verified.',
+      text: 'Owned requirements engineering for a secure software-defined radio: broke system requirements down into clear, testable ones (L0–L4 in Jama), led review sessions with stakeholders and traced each requirement to its verification.',
     },
     {
       when: 'Oct 2024 – Jun 2025',
@@ -53,10 +53,10 @@ export default {
     },
     {
       when: 'Jul 2023 – Sep 2024',
-      title: 'Relocation to Germany',
+      title: 'Career break: relocation to Germany',
       org: 'Ankara → Munich',
       logos: [], mono: 'DE',
-      text: 'Moved to Germany, studied German and kept building programming and data-analysis projects.',
+      text: 'Moved to Munich and studied German to A2.',
     },
     {
       when: 'Jun 2021 – Jun 2023',
@@ -88,12 +88,12 @@ export default {
   },
   nowStamp: 'Updated October 2026',
   now: [
-    { h: 'Working on', p: 'Requirements for a secure software-defined radio at Rohde & Schwarz.' },
+    { h: 'Looking for', p: 'My next role in requirements, systems or RF test engineering in Munich. Available immediately.' },
     { h: 'Learning', p: 'German, on the way from A2 to B1.' },
     { h: 'Building', p: 'This website, in English, Turkish and soon German.' },
   ],
   contactH: "Let's talk",
-  contactText: 'The fastest way to reach me is email.',
+  contactText: "I'm open to new roles. The fastest way to reach me is email.",
   ui: {
     dark: 'Dark mode',
     light: 'Light mode',

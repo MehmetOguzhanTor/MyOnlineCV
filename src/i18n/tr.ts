@@ -2,12 +2,12 @@ export default {
   meta: {
     title: 'Mehmet Oğuzhan Tor · Gereksinim ve Sistem Mühendisi',
     description:
-      "Münih'te güvenli telsiz sistemleri için gereksinim ve sistem mühendisliği yapan elektrik-elektronik mühendisi. Geçmişi RF test, sinyal işleme ve insansız hava araçları.",
+      "Münih'te savunma ve telekomünikasyonda yaklaşık dört yıllık deneyime sahip gereksinim ve sistem mühendisi: sistem gereksinimleri, RF test ve sayısal sinyal işleme. Hemen başlayabilir.",
   },
   nav: { about: 'Hakkımda', projects: 'Projeler', experience: 'Deneyim', cv: 'CV', now: 'Şu an', contact: 'İletişim' },
-  role: 'Gereksinim ve Sistem Mühendisi · RF ve sinyal işleme',
+  role: 'Gereksinim ve Sistem Mühendisi · RF Test · DSP',
   lede:
-    "Münih'te yaşayan bir elektrik-elektronik mühendisiyim. Rohde & Schwarz'da güvenli telsiz sistemlerinin gereksinimlerini yazıyorum. Geçmişim RF test, sayısal sinyal işleme ve insansız hava araçları üzerine.",
+    "Münih'te yaşayan, savunma ve telekomünikasyonda yaklaşık dört yıllık deneyime sahip bir elektrik-elektronik mühendisiyim. Fiziksel katmandaki sinyal işlemeden resmi sistem gereksinimlerine kadar çalıştım. En son Rohde & Schwarz'da güvenli bir yazılım tabanlı telsizin gereksinim mühendisliğini yürüttüm.",
   cta: { experience: 'Deneyimime bak', contact: 'İletişime geç' },
   h: { projects: 'projeler', experience: 'deneyim', now: 'şu an', contact: 'iletişim' },
   projects: [
@@ -38,11 +38,11 @@ export default {
   ],
   experience: [
     {
-      when: 'Tem 2025 – şimdi',
+      when: 'Tem 2025 – Eki 2026',
       title: 'Gereksinim Mühendisi',
       org: 'Rohde & Schwarz (K-tronik aracılığıyla), Münih',
       logos: [{ src: '/logos/rohde-schwarz.svg', alt: 'Rohde & Schwarz' }, { src: '/logos/k-tronik.png', alt: 'K-tronik' }],
-      text: 'Güvenli bir yazılım tabanlı telsizin sistem gereksinimlerini net ve test edilebilir gereksinimlere ayırıyor, her birini nasıl doğrulanacağına bağlıyorum.',
+      text: 'Güvenli bir yazılım tabanlı telsizin gereksinim mühendisliğinden sorumluydum: sistem gereksinimlerini net ve test edilebilir gereksinimlere ayırdım (Jama’da L0–L4), paydaşlarla gözden geçirme toplantılarını yönettim ve her gereksinimi doğrulamasına bağladım.',
     },
     {
       when: 'Eki 2024 – Haz 2025',
@@ -53,10 +53,10 @@ export default {
     },
     {
       when: 'Tem 2023 – Eyl 2024',
-      title: "Almanya'ya taşınma",
+      title: "Kariyer arası: Almanya'ya taşınma",
       org: 'Ankara → Münih',
       logos: [], mono: 'DE',
-      text: "Almanya'ya taşındım, Almanca çalıştım ve programlama ile veri analizi projelerine devam ettim.",
+      text: "Münih'e taşındım ve A2 seviyesine kadar Almanca öğrendim.",
     },
     {
       when: 'Haz 2021 – Haz 2023',
@@ -88,12 +88,12 @@ export default {
   },
   nowStamp: "Ekim 2026'da güncellendi",
   now: [
-    { h: 'Çalışıyorum', p: "Rohde & Schwarz'da güvenli bir yazılım tabanlı telsizin gereksinimleri üzerinde." },
+    { h: 'Arıyorum', p: "Münih'te gereksinim, sistem ya da RF test mühendisliğinde yeni bir pozisyon. Hemen başlayabilirim." },
     { h: 'Öğreniyorum', p: "Almanca, A2'den B1'e doğru." },
     { h: 'Yapıyorum', p: 'Bu siteyi: İngilizce, Türkçe ve yakında Almanca.' },
   ],
   contactH: 'Konuşalım',
-  contactText: 'Bana ulaşmanın en hızlı yolu e-posta.',
+  contactText: 'Yeni pozisyonlara açığım. Bana ulaşmanın en hızlı yolu e-posta.',
   ui: {
     dark: 'Karanlık mod',
     light: 'Aydınlık mod',

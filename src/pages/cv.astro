@@ -29,6 +29,7 @@ const pdf = '/Mehmet-Oguzhan-Tor-CV.pdf';
         {cv.contact.map((c) => <li>{c.href ? <a href={c.href}>{c.label}</a> : c.label}</li>)}
       </ul>
     </header>
+    <p class="cv-status">{cv.status}</p>
 
     <section>
       <h2>Profile</h2>
@@ -50,11 +51,13 @@ const pdf = '/Mehmet-Oguzhan-Tor-CV.pdf';
                   <h4>{r.title}</h4>
                   <span class="cv-meta">{r.when}</span>
                 </div>
-                <ul>
-                  {r.points.map((pt) => (
-                    <li>{pt}</li>
-                  ))}
-                </ul>
+                {r.points.length > 0 && (
+                  <ul>
+                    {r.points.map((pt) => (
+                      <li>{pt}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
