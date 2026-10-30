@@ -22,6 +22,8 @@ const ogImage = new URL('/photo.jpg', site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The site has its own dark mode; tell the Dark Reader extension not to repaint it. -->
+    <meta name="darkreader-lock" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
